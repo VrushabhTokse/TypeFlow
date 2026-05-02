@@ -1,0 +1,663 @@
+/* ========================
+   CSS Variables & Theming
+   ======================== */
+:root[data-theme="dark"] {
+    --bg-color: #09090b;
+    --text-primary: #f8fafc;
+    --text-secondary: #a1a1aa;
+    --primary-color: #a855f7;
+    --primary-hover: #9333ea;
+    --glass-bg: rgba(24, 24, 27, 0.6);
+    --glass-border: rgba(168, 85, 247, 0.2);
+    --correct-color: #2dd4bf;
+    --incorrect-color: #fb7185;
+    --incorrect-bg: rgba(251, 113, 133, 0.15);
+    --input-bg: rgba(9, 9, 11, 0.8);
+    --card-bg: rgba(39, 39, 42, 0.5);
+    --blob-1: rgba(168, 85, 247, 0.25);
+    --blob-2: rgba(45, 212, 191, 0.15);
+    --cursor-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%23a855f7' stroke='%23ffffff' stroke-width='1.5'%3E%3Cpath d='m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z'/%3E%3C/svg%3E"), auto;
+    --cursor-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%232dd4bf' stroke='%23ffffff' stroke-width='1.5'%3E%3Cpath d='m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z'/%3E%3C/svg%3E"), pointer;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #fcfcfd;
+    --text-primary: #09090b;
+    --text-secondary: #71717a;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(99, 102, 241, 0.15);
+    --correct-color: #059669;
+    --incorrect-color: #e11d48;
+    --incorrect-bg: rgba(225, 29, 72, 0.1);
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(244, 244, 245, 0.8);
+    --blob-1: rgba(99, 102, 241, 0.2);
+    --blob-2: rgba(20, 184, 166, 0.2);
+    --cursor-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%236366f1' stroke='%23ffffff' stroke-width='1.5'%3E%3Cpath d='m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z'/%3E%3C/svg%3E"), auto;
+    --cursor-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%23059669' stroke='%23ffffff' stroke-width='1.5'%3E%3Cpath d='m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z'/%3E%3C/svg%3E"), pointer;
+}
+
+/* ========================
+   Global Styles
+   ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: var(--cursor-default);
+}
+
+a, button, .btn, .config-btn, .lesson-item, .close-modal, .theme-toggle, .toggle-btn, .stat-card {
+    cursor: var(--cursor-pointer);
+}
+
+input, textarea {
+    cursor: text;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================
+   Background Elements
+   ======================== */
+.background-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 10s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--blob-1);
+    top: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--blob-2);
+    bottom: -50px;
+    right: -50px;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 50px) scale(1.1); }
+}
+
+/* ========================
+   Glassmorphism Utilities
+   ======================== */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+   Navigation
+   ======================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.theme-toggle:hover {
+    color: var(--text-primary);
+}
+
+/* ========================
+   Layout & Containers
+   ======================== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+/* ========================
+   Buttons & Inputs
+   ======================== */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+}
+
+.secondary-btn:hover {
+    background: var(--glass-border);
+}
+
+.small-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* ========================
+   Auth & Forms
+   ======================== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+}
+
+.auth-toggle {
+    display: flex;
+    margin-bottom: 2rem;
+    background: var(--input-bg);
+    border-radius: 8px;
+    padding: 0.25rem;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.toggle-btn.active {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.auth-form {
+    display: none;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.auth-form.active {
+    display: flex;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon-wrapper i {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-secondary);
+}
+
+.input-icon-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid var(--glass-border);
+    background: var(--input-bg);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.input-icon-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.auth-message {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    min-height: 20px;
+}
+
+.msg-error { color: var(--incorrect-color); }
+.msg-success { color: var(--correct-color); }
+
+/* ========================
+   Dashboard
+   ======================== */
+.dashboard-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+    color: var(--text-secondary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-details h3 {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+}
+
+.stat-val {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.history-section {
+    padding: 1.5rem;
+}
+
+.history-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.history-table th, .history-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.history-table th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.history-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========================
+   Modals
+   ======================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    padding: 2.5rem;
+    text-align: center;
+    transform: scale(0.9);
+    animation: scaleUp 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+    to { transform: scale(1); }
+}
+
+.motivational-text {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.final-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.f-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.f-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.f-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ========================
+   Utilities
+   ======================== */
+.text-center { text-align: center; }
+.font-bold { font-weight: bold; }
+.text-primary { color: var(--primary-color); }
+.text-error { color: var(--incorrect-color); }
+.loading-text { color: var(--text-secondary); font-style: italic; }
+
+.level-badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.level-badge.beginner { background: rgba(16, 185, 129, 0.2); color: var(--correct-color); }
+.level-badge.intermediate { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+.level-badge.advanced { background: rgba(239, 68, 68, 0.2); color: var(--incorrect-color); }
+
+/* ========================
+   Lessons UI
+   ======================== */
+.lessons-modal-content {
+    max-width: 600px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: var(--text-primary);
+}
+
+.lessons-container {
+    margin-top: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-right: 1rem;
+}
+
+/* Custom Scrollbar for container */
+.lessons-container::-webkit-scrollbar {
+    width: 6px;
+}
+.lessons-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+.lessons-container::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 4px;
+}
+
+.lesson-category {
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+}
+
+.lesson-category h3 {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+}
+
+.lesson-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
+}
+
+.lesson-item {
+    background: var(--input-bg);
+    border: 1px solid var(--glass-border);
+    padding: 0.6rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.lesson-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.lesson-item.completed {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.lesson-item.active-lesson {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ========================
+   Footer
+   ======================== */
+.app-footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: auto;
+    letter-spacing: 1px;
+}
+
+/* Custom Text Modal Specifics */
+.auth-input {
+    background: var(--input-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.auth-input:focus {
+    border-color: var(--primary-color);
+}
+
+.auth-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.auth-btn:hover {
+    background: var(--primary-hover);
+}

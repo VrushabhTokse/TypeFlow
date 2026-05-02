@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeFlow - Authentication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-keyboard"></i>
+            <span>TypeFlow</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-play"></i> Practice</a>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container auth-container">
+        <div class="auth-box glass-panel">
+            <div class="auth-toggle">
+                <button class="toggle-btn active" id="btn-login">Login</button>
+                <button class="toggle-btn" id="btn-register">Register</button>
+            </div>
+            
+            <div class="auth-message" id="auth-message"></div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <div class="input-group">
+                    <label for="login-username">Username</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="login-username" required placeholder="Enter username">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="login-password" required placeholder="Enter password">
+                    </div>
+                </div>
+                <button type="submit" class="btn primary-btn full-width">Login</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form">
+                <div class="input-group">
+                    <label for="register-username">Username</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="register-username" required placeholder="Choose username">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Password</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="register-password" required placeholder="Create password">
+                    </div>
+                </div>
+                <button type="submit" class="btn primary-btn full-width">Create Account</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <p>Created by T21</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

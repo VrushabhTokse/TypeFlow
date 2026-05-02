@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeFlow - Premium Typing Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/typing.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-keyboard"></i>
+            <span>TypeFlow</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active"><i class="fa-solid fa-play"></i> Practice</a>
+            <a href="#" id="lessons-nav-btn"><i class="fa-solid fa-graduation-cap"></i> Lessons</a>
+            <a href="#" id="custom-nav-btn"><i class="fa-solid fa-pen-to-square"></i> Custom</a>
+            <a href="dashboard.html" id="dashboard-link" style="display: none;"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+            <a href="auth.html" id="auth-link"><i class="fa-solid fa-user"></i> Login</a>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="typing-header">
+            <div class="test-config">
+                <div class="config-group">
+                    <span>Level:</span>
+                    <button class="config-btn active" data-level="Beginner">Beginner</button>
+                    <button class="config-btn" data-level="Intermediate">Intermediate</button>
+                    <button class="config-btn" data-level="Advanced">Advanced</button>
+                </div>
+                <div class="config-group time-config">
+                    <span>Time:</span>
+                    <button class="config-btn" data-time="15">15s</button>
+                    <button class="config-btn active" data-time="30">30s</button>
+                    <button class="config-btn" data-time="60">60s</button>
+                    <button class="config-btn" data-time="120">120s</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-label">time</span>
+                <span class="stat-value" id="timer">30</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">wpm</span>
+                <span class="stat-value" id="wpm">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">acc</span>
+                <span class="stat-value" id="accuracy">100%</span>
+            </div>
+        </div>
+
+        <div class="typing-area-layout">
+            <div class="start-typing-indicator">
+                START<br>TYPING
+            </div>
+            
+            <div class="typing-main-content">
+                <div class="typing-container">
+                    <div class="typing-text-wrapper" id="text-wrapper">
+                        <!-- Populated by JS -->
+                    </div>
+                    <input type="text" id="hidden-input" class="hidden-input" autocomplete="off" spellcheck="false">
+                </div>
+
+                <div class="virtual-keyboard" id="virtual-keyboard">
+                    <div class="vk-row">
+                        <div class="vk-key" data-key="`">~<br>`</div>
+                        <div class="vk-key" data-key="1">!<br>1</div>
+                        <div class="vk-key" data-key="2">@<br>2</div>
+                        <div class="vk-key" data-key="3">#<br>3</div>
+                        <div class="vk-key" data-key="4">$<br>4</div>
+                        <div class="vk-key" data-key="5">%<br>5</div>
+                        <div class="vk-key" data-key="6">^<br>6</div>
+                        <div class="vk-key" data-key="7">&amp;<br>7</div>
+                        <div class="vk-key" data-key="8">*<br>8</div>
+                        <div class="vk-key" data-key="9">(<br>9</div>
+                        <div class="vk-key" data-key="0">)<br>0</div>
+                        <div class="vk-key" data-key="-">_<br>-</div>
+                        <div class="vk-key" data-key="=">+<br>=</div>
+                        <div class="vk-key vk-wide" data-key="backspace">backspace</div>
+                    </div>
+                    <div class="vk-row">
+                        <div class="vk-key vk-tab" data-key="tab">tab</div>
+                        <div class="vk-key" data-key="q">q</div>
+                        <div class="vk-key" data-key="w">w</div>
+                        <div class="vk-key" data-key="e">e</div>
+                        <div class="vk-key" data-key="r">r</div>
+                        <div class="vk-key" data-key="t">t</div>
+                        <div class="vk-key" data-key="y">y</div>
+                        <div class="vk-key" data-key="u">u</div>
+                        <div class="vk-key" data-key="i">i</div>
+                        <div class="vk-key" data-key="o">o</div>
+                        <div class="vk-key" data-key="p">p</div>
+                        <div class="vk-key" data-key="[">{<br>[</div>
+                        <div class="vk-key" data-key="]">}<br>]</div>
+                        <div class="vk-key" data-key="\">|<br>\</div>
+                    </div>
+                    <div class="vk-row">
+                        <div class="vk-key vk-caps" data-key="caps lock">caps lock</div>
+                        <div class="vk-key" data-key="a">a</div>
+                        <div class="vk-key" data-key="s">s</div>
+                        <div class="vk-key" data-key="d">d</div>
+                        <div class="vk-key" data-key="f">f</div>
+                        <div class="vk-key" data-key="g">g</div>
+                        <div class="vk-key" data-key="h">h</div>
+                        <div class="vk-key" data-key="j">j</div>
+                        <div class="vk-key" data-key="k">k</div>
+                        <div class="vk-key" data-key="l">l</div>
+                        <div class="vk-key" data-key=";">:<br>;</div>
+                        <div class="vk-key" data-key="'">"<br>'</div>
+                        <div class="vk-key vk-enter" data-key="enter">enter</div>
+                    </div>
+                    <div class="vk-row">
+                        <div class="vk-key vk-shift-l" data-key="shift-l">shift</div>
+                        <div class="vk-key" data-key="z">z</div>
+                        <div class="vk-key" data-key="x">x</div>
+                        <div class="vk-key" data-key="c">c</div>
+                        <div class="vk-key" data-key="v">v</div>
+                        <div class="vk-key" data-key="b">b</div>
+                        <div class="vk-key" data-key="n">n</div>
+                        <div class="vk-key" data-key="m">m</div>
+                        <div class="vk-key" data-key=",">&lt;<br>,</div>
+                        <div class="vk-key" data-key=".">&gt;<br>.</div>
+                        <div class="vk-key" data-key="/">?<br>/</div>
+                        <div class="vk-key vk-shift-r" data-key="shift-r">shift</div>
+                    </div>
+                    <div class="vk-row vk-row-bottom">
+                        <div class="vk-key vk-space" data-key=" "></div>
+                    </div>
+                </div>
+
+                <div class="hands-container">
+                    <svg viewBox="0 0 400 200" class="hand-svg left-hand">
+                        <!-- Left Hand -->
+                        <path d="M 50 110 Q 140 160 210 130 L 190 200 L 50 200 Z" class="palm" />
+                        <rect id="left-pinky" class="finger" x="50" y="50" width="30" height="80" rx="15" />
+                        <rect id="left-ring" class="finger" x="90" y="30" width="30" height="100" rx="15" />
+                        <rect id="left-middle" class="finger" x="130" y="20" width="30" height="110" rx="15" />
+                        <rect id="left-index" class="finger" x="170" y="40" width="30" height="90" rx="15" />
+                        <rect id="left-thumb" class="finger" x="210" y="100" width="30" height="60" rx="15" transform="rotate(-50 210 100)" />
+                    </svg>
+                    <svg viewBox="0 0 400 200" class="hand-svg right-hand">
+                        <!-- Right Hand -->
+                        <path d="M 190 130 Q 260 160 350 110 L 350 200 L 210 200 Z" class="palm" />
+                        <rect id="right-thumb" class="finger" x="160" y="100" width="30" height="60" rx="15" transform="rotate(50 190 100)" />
+                        <rect id="right-index" class="finger" x="200" y="40" width="30" height="90" rx="15" />
+                        <rect id="right-middle" class="finger" x="240" y="20" width="30" height="110" rx="15" />
+                        <rect id="right-ring" class="finger" x="280" y="30" width="30" height="100" rx="15" />
+                        <rect id="right-pinky" class="finger" x="320" y="50" width="30" height="80" rx="15" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="restart-btn" class="btn primary-btn"><i class="fa-solid fa-rotate-right"></i> Restart Test</button>
+        </div>
+
+        <!-- Result Modal -->
+        <div class="modal" id="result-modal">
+            <div class="modal-content glass-panel">
+                <h2>Test Complete!</h2>
+                <p id="motivational-message" class="motivational-text">Great job! Keep practicing to improve.</p>
+                <div class="final-stats">
+                    <div class="f-stat">
+                        <span class="f-label">WPM</span>
+                        <span class="f-value" id="final-wpm">0</span>
+                    </div>
+                    <div class="f-stat">
+                        <span class="f-label">Accuracy</span>
+                        <span class="f-value" id="final-accuracy">0%</span>
+                    </div>
+                    <div class="f-stat">
+                        <span class="f-label">Keystrokes</span>
+                        <span class="f-value" id="final-chars">0</span>
+                    </div>
+                    <div class="f-stat">
+                        <span class="f-label">Errors</span>
+                        <span class="f-value" id="final-errors">0</span>
+                    </div>
+                </div>
+
+                <div id="certificate-section" style="display: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border);">
+                    <h3 style="margin-bottom: 1rem; color: var(--primary-color); font-size: 1.1rem;">🏆 Claim Your Certificate</h3>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                        <input type="text" id="cert-name-input" class="auth-input" placeholder="Enter your name..." style="max-width: 200px;">
+                        <button id="download-cert-btn" class="btn primary-btn"><i class="fa-solid fa-download"></i> Download</button>
+                    </div>
+                </div>
+
+                <div class="modal-actions" style="margin-top: 1.5rem;">
+                    <button id="modal-restart" class="btn primary-btn">Try Again</button>
+                    <button id="modal-next-lesson" class="btn primary-btn" style="display: none;">Next Lesson</button>
+                    <a href="dashboard.html" class="btn secondary-btn" id="save-result-btn">View Dashboard</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lessons Overview Modal -->
+        <div class="modal" id="lessons-modal">
+            <div class="modal-content glass-panel lessons-modal-content">
+                <button class="close-modal" id="close-lessons"><i class="fa-solid fa-xmark"></i></button>
+                <h2>Lessons Overview</h2>
+                <div class="lessons-container" id="lessons-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Text Modal -->
+        <div id="custom-text-modal" class="modal">
+            <div class="modal-content" style="max-width: 600px;">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Custom Practice</h2>
+                <div style="margin: 1.5rem 0; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Paste your custom text here:</label>
+                    <textarea id="custom-text-input" class="auth-input" style="width: 100%; height: 150px; resize: vertical; margin-bottom: 1.5rem;" placeholder="Type or paste text..."></textarea>
+                    
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Time Limit (Seconds):</label>
+                    <input type="number" id="custom-time-input" class="auth-input" style="width: 100%;" value="60" min="10" max="3600">
+                </div>
+                <div class="action-buttons" style="gap: 1rem;">
+                    <button id="close-custom-modal" class="config-btn">Cancel</button>
+                    <button id="start-custom-btn" class="auth-btn">Start Practice</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Hidden Certificate Template -->
+    <div id="certificate-template" style="position:absolute;top:-9999px;left:-9999px;width:840px;height:596px;background:#ffffff;font-family:Georgia,serif;box-sizing:border-box;">
+        <div style="border:5px solid #7c3aed;width:100%;height:100%;box-sizing:border-box;padding:6px;background:#7c3aed;">
+            <div style="border:3px solid #c4b5fd;width:100%;height:100%;box-sizing:border-box;background:#fff;display:flex;flex-direction:column;">
+                <!-- TOP HEADER BANNER -->
+                <div style="background:#7c3aed;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;">
+                    <div>
+                        <div style="font-size:22px;font-weight:bold;color:#fff;letter-spacing:5px;font-family:Arial,sans-serif;">TYPEFLOW</div>
+                        <div style="font-size:9px;color:#c4b5fd;letter-spacing:3px;margin-top:3px;font-family:Arial,sans-serif;">PREMIUM TYPING ACADEMY</div>
+                    </div>
+                    <div style="font-size:46px;line-height:1;">🏆</div>
+                    <div style="text-align:right;font-family:Arial,sans-serif;">
+                        <div style="font-size:13px;color:#f5f3ff;font-weight:bold;" id="cert-date">01/01/2026</div>
+                        <div style="font-size:10px;color:#c4b5fd;margin-top:4px;" id="cert-id-display">ID: TF-XX-000</div>
+                    </div>
+                </div>
+                <!-- MAIN BODY -->
+                <div style="flex:1;padding:24px 50px 20px 50px;display:flex;flex-direction:column;justify-content:space-between;">
+                    <!-- Title -->
+                    <div style="text-align:center;">
+                        <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:6px;">
+                            <div style="height:1px;width:70px;background:#c4b5fd;"></div>
+                            <div style="font-size:10px;color:#7c3aed;letter-spacing:4px;font-family:Arial,sans-serif;font-weight:bold;">CERTIFICATE OF ACHIEVEMENT</div>
+                            <div style="height:1px;width:70px;background:#c4b5fd;"></div>
+                        </div>
+                        <div style="font-size:34px;color:#1a1a2e;letter-spacing:2px;font-family:Georgia,serif;font-style:italic;">Excellence in Typing</div>
+                    </div>
+                    <!-- Recipient -->
+                    <div style="text-align:center;font-family:Arial,sans-serif;">
+                        <div style="font-size:11px;color:#888;letter-spacing:3px;margin-bottom:10px;">THIS PROUDLY CERTIFIES THAT</div>
+                        <div id="cert-name-display" style="font-size:36px;color:#7c3aed;font-family:Georgia,serif;font-weight:bold;border-bottom:2px solid #e9d5ff;padding-bottom:8px;display:inline-block;min-width:300px;">Guest Typist</div>
+                        <div style="height:10px;"></div>
+                        <div id="cert-assessment-desc" style="font-size:13px;color:#555;line-height:1.8;max-width:560px;margin:0 auto;">Has successfully completed a <b style="color:#1a1a2e;">60</b> second typing assessment with outstanding results:</div>
+                    </div>
+                    <!-- Stats -->
+                    <div style="display:flex;justify-content:center;gap:24px;font-family:Arial,sans-serif;">
+                        <div style="text-align:center;border:2px solid #7c3aed;border-radius:10px;padding:12px 36px;background:#faf5ff;min-width:140px;">
+                            <div style="font-size:9px;color:#7c3aed;letter-spacing:3px;margin-bottom:6px;font-weight:bold;">TYPING SPEED</div>
+                            <div style="font-size:38px;font-weight:bold;color:#7c3aed;font-family:monospace;line-height:1.1;"><span id="cert-wpm">0</span></div>
+                            <div style="font-size:11px;color:#a78bfa;margin-top:2px;">WORDS / MIN</div>
+                        </div>
+                        <div style="width:1px;background:#e9d5ff;margin:4px 0;"></div>
+                        <div style="text-align:center;border:2px solid #7c3aed;border-radius:10px;padding:12px 36px;background:#faf5ff;min-width:140px;">
+                            <div style="font-size:9px;color:#7c3aed;letter-spacing:3px;margin-bottom:6px;font-weight:bold;">ACCURACY</div>
+                            <div style="font-size:38px;font-weight:bold;color:#7c3aed;font-family:monospace;line-height:1.1;"><span id="cert-acc">0</span><span style="font-size:20px;">%</span></div>
+                            <div style="font-size:11px;color:#a78bfa;margin-top:2px;">KEYSTROKE PRECISION</div>
+                        </div>
+                    </div>
+                    <!-- Footer -->
+                    <div style="display:flex;justify-content:space-between;align-items:flex-end;font-family:Arial,sans-serif;border-top:1px solid #e9d5ff;padding-top:14px;">
+                        <div style="text-align:center;width:160px;">
+                            <div style="font-size:20px;color:#7c3aed;margin-bottom:4px;font-family:Georgia,serif;font-style:italic;">T21</div>
+                            <div style="border-top:1px solid #c4b5fd;padding-top:5px;font-size:9px;color:#888;letter-spacing:2px;">LEAD INSTRUCTOR</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="width:56px;height:56px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;margin:0 auto 5px auto;">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div style="font-size:8px;color:#888;letter-spacing:1px;">typeflow.com/verify</div>
+                        </div>
+                        <div style="text-align:center;width:160px;">
+                            <div style="font-size:20px;color:#7c3aed;margin-bottom:4px;font-family:Georgia,serif;font-style:italic;">R21</div>
+                            <div style="border-top:1px solid #c4b5fd;padding-top:5px;font-size:9px;color:#888;letter-spacing:2px;">SYSTEM DIRECTOR</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- BOTTOM ACCENT STRIPE -->
+                <div style="height:6px;background:#7c3aed;"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>&copy; All Rights Reserved. Created by T21 | Idea of R21</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="js/api.js?v=16"></script>
+    <script src="js/app.js?v=16"></script>
+    <script src="js/paragraphs.js?v=16"></script>
+    <script src="js/lessons.js?v=16"></script>
+    <script src="js/typing.js?v=16"></script>
+</body>
+</html>
