@@ -111,32 +111,32 @@ const typingLessons = [
             {
                 "id": 21,
                 "title": "Home Row Words",
-                "text": "glass glad ask salad flash fall dash flask sad flash fall flask sad ask dash glad glass salad salad flash sad dash glad flask ask glass fall glass flask salad fall glad flash sad dash ask sad glad dash salad flash glass flask ask fall flash glad sad salad"
+                "text": "glass glad ask salad flash fall dash flask sad alkali alfalfa dallas salsa asks lads lass sass shad shads falls halls dads glads flag flags flak flaks gal gals gall galls jag jags lad lag lags ash ashy lash slash all shall as has had"
             },
             {
                 "id": 22,
                 "title": "Top Row Words",
-                "text": "pot your tree type pour equip power quiet root pot quiet type your equip pour tree root power your power pour root quiet type equip pot tree tree quiet pour your pot equip power root type quiet type power pour equip tree root pot your your pour"
+                "text": "pot your tree type pour equip power quiet root pity rope route outer upper tower quietly equity poetry write wrote prior property territory report theory output input expert quite pout rout true tire trip wire wore word work wait west were went week"
             },
             {
                 "id": 23,
                 "title": "Bottom Row Words",
-                "text": "max extra man mix ban vibe zombie cave cab zip zip max cab mix extra man vibe zombie ban cave zip ban max extra vibe man cab cave zombie mix extra cave cab mix max zombie vibe man zip ban ban"
+                "text": "max extra man mix ban vibe zombie cave cab zip zinc van vex box move come can back black blue bank born been become book best body bring build both base busy by bad big boy box bit but zinc"
             },
             {
                 "id": 24,
                 "title": "Left Hand Only",
-                "text": "star sacred faster deaf water secret create fade star create faster sacred fade secret deaf water star faster create sacred water deaf secret fade fade water deaf faster star create secret sacred create deaf sacred water secret fade faster star fade create secret star faster water"
+                "text": "star sacred faster deaf water secret create fade base case date face gate hate late mate pace race save take vace wake wave gear fear dear bear tear wear read rest best test west east vast cast fast last"
             },
             {
                 "id": 25,
                 "title": "Right Hand Only",
-                "text": "pool imply hoop minimum you loop onion in on million you minimum in pool loop million hoop imply onion on imply million loop onion minimum you hoop on pool in in loop on onion minimum imply you hoop million pool on imply you pool"
+                "text": "pool imply hoop minimum you loop onion in on million hook look book cook took noon moon soon loom doom room pull hull null kill mill pill bill fill till hill milk silk"
             },
             {
                 "id": 26,
                 "title": "Short Words 1",
-                "text": "for to the I it a be in of that not have and in have and I it not to of be for a the that of it not for have and that to be a I the in in"
+                "text": "for to the I it a be in of that not have and with for to be in of and I it a the that have not with that the a be in of and I it to for have not be that have and with in of a the I it to for have with not"
             },
             {
                 "id": 27,
@@ -146,12 +146,12 @@ const typingLessons = [
             {
                 "id": 28,
                 "title": "Short Words 3",
-                "text": "or we her one will would she an my say all they they her one would say will she an or all my we an they say my we would one all or she her will one would she they an we or will my her all"
+                "text": "or we her one will would she an my say all they her say will she an or all my we they say my we would one all or she her will would she they an we or will my her all they an say would one"
             },
             {
                 "id": 29,
                 "title": "Common Words 1",
-                "text": "who about so up if which what out there their get so about there out their up which if get who what about so out up who if which get there what their what about who get which out their there up so if their what about up out there"
+                "text": "who about so up if which what out there their get so about there out their up which if get who what about so out up who if which get there what their what about who get which out their there up so if their"
             },
             {
                 "id": 30,
@@ -166,72 +166,72 @@ const typingLessons = [
             {
                 "id": 32,
                 "title": "Longer Words 1",
-                "text": "everything family around through completely important through important completely family everything around completely through everything family important around through family important completely around everything important everything completely family around through through family everything around important completely family around through everything important completely completely everything through important around family"
+                "text": "everything family around through completely important together possibly everyone different children building although although everyone possibly together important completely through around family everything children building different everything family around"
             },
             {
                 "id": 33,
                 "title": "Longer Words 2",
-                "text": "possible remember development information business possible business remember information development business possible information remember development business development possible information remember business remember possible information development development information remember possible business possible business remember development information remember possible information business development"
+                "text": "possible remember development information business successful especially understand together government possible successful especially understand together government business development information remember possible business especially understand together"
             },
             {
                 "id": 34,
                 "title": "Tricky Words 1",
-                "text": "rhythm embarrass pronunciation accommodation necessary rhythm accommodation necessary embarrass pronunciation necessary pronunciation accommodation embarrass rhythm pronunciation rhythm embarrass accommodation necessary embarrass pronunciation rhythm necessary accommodation pronunciation accommodation rhythm embarrass necessary accommodation necessary rhythm pronunciation embarrass pronunciation embarrass accommodation rhythm necessary accommodation pronunciation embarrass rhythm necessary necessary"
+                "text": "rhythm embarrass pronunciation accommodation necessary experience millennium questionnaire definitely rhythm experience millennium questionnaire definitely necessary accommodation pronunciation embarrass rhythm embarrass pronunciation accommodation necessary"
             },
             {
                 "id": 35,
                 "title": "Tricky Words 2",
-                "text": "mayonnaise conscientious occasionally definitely fluorescent mayonnaise conscientious occasionally definitely fluorescent occasionally conscientious fluorescent mayonnaise definitely fluorescent mayonnaise occasionally definitely conscientious occasionally definitely fluorescent mayonnaise conscientious mayonnaise conscientious fluorescent occasionally definitely conscientious occasionally mayonnaise fluorescent definitely definitely mayonnaise occasionally conscientious fluorescent conscientious occasionally fluorescent definitely mayonnaise occasionally conscientious mayonnaise fluorescent"
+                "text": "mayonnaise conscientious occasionally definitely fluorescent independent accidentally achievement mayonnaise independent accidentally achievement fluorescent definitely occasionally conscientious mayonnaise conscientious occasionally definitely fluorescent"
             },
             {
                 "id": 36,
                 "title": "Double Letters 1",
-                "text": "little feel off spell book letter missing soon sweet feel letter book off little spell sweet missing soon book feel soon letter missing sweet off little spell little soon off feel book letter sweet missing spell missing sweet little soon off letter book feel spell feel off"
+                "text": "little feel off spell book letter missing soon sweet carry glass grass dress happy apple coffee butter better summer winter little feel off spell book letter missing soon sweet carry glass grass dress happy apple coffee butter better summer winter"
             },
             {
                 "id": 37,
                 "title": "Double Letters 2",
-                "text": "sudden account allow apparent opposite address success apparent sudden success allow account address opposite apparent account address opposite allow success sudden allow apparent success address sudden account opposite sudden allow address apparent opposite success account success apparent sudden opposite account address allow opposite"
+                "text": "sudden account allow apparent opposite address success collect command connect difficult effect follow happen pattern support sudden account allow apparent opposite address success collect command connect difficult effect follow happen pattern support"
             },
             {
                 "id": 38,
                 "title": "Vowel Focus",
-                "text": "piece dialogue aerial audio beautiful sequoia queue aerial piece audio sequoia beautiful dialogue queue beautiful audio aerial queue piece dialogue sequoia beautiful audio queue aerial piece dialogue sequoia aerial queue beautiful piece sequoia dialogue audio queue piece dialogue aerial sequoia beautiful audio audio dialogue sequoia aerial queue beautiful piece dialogue"
+                "text": "piece dialogue aerial audio beautiful sequoia queue avenue ocean equal idea area unite onion unusual area equal idea ocean piece dialogue aerial audio beautiful sequoia queue avenue ocean equal idea area unite onion unusual area equal idea ocean"
             },
             {
                 "id": 39,
                 "title": "Consonant Focus",
-                "text": "rhythm sixths strength strictly lengths prompts lengths sixths prompts strength rhythm strictly prompts sixths strictly strength rhythm lengths prompts strictly strength lengths sixths rhythm lengths strictly rhythm prompts strength sixths prompts lengths strength rhythm sixths strictly strictly sixths lengths strength prompts rhythm strength lengths strictly rhythm prompts"
+                "text": "rhythm sixths strength strictly lengths prompts sphinx myths rhythm sphinx myths strictly rhythm sixths strength strictly lengths prompts sphinx myths rhythm sphinx myths strictly"
             },
             {
                 "id": 40,
                 "title": "Action Words",
-                "text": "playing jumping building typing reading creating running reading typing playing jumping building creating running playing running jumping creating reading building typing typing playing running jumping creating building reading creating running building reading typing jumping playing reading running creating playing jumping building typing building playing running typing reading creating jumping typing"
+                "text": "playing jumping building typing reading creating running flying swimming driving walking talking thinking working helping playing jumping building typing reading creating running flying swimming driving walking talking thinking working helping"
             },
             {
                 "id": 41,
                 "title": "Nature Words",
-                "text": "galaxy ocean island mountain forest planet river desert galaxy mountain desert ocean river forest island planet island ocean mountain desert galaxy planet river forest ocean forest desert river planet galaxy island mountain galaxy mountain ocean planet desert river island forest river mountain island forest desert ocean planet galaxy galaxy planet"
+                "text": "galaxy ocean island mountain forest planet river desert stars clouds sky moon sun earth space nature galaxy ocean island mountain forest planet river desert stars clouds sky moon sun earth space nature"
             },
             {
                 "id": 42,
                 "title": "Tech Words",
-                "text": "processor network keyboard screen mouse storage cloud memory screen storage mouse keyboard processor memory network cloud cloud screen keyboard network processor memory storage mouse processor screen storage memory mouse cloud keyboard network memory keyboard processor mouse network cloud storage screen network mouse memory processor storage cloud"
+                "text": "processor network keyboard screen mouse storage cloud memory hardware software monitor printer cable data code system processor network keyboard screen mouse storage cloud memory hardware software monitor printer cable data code system"
             },
             {
                 "id": 43,
                 "title": "Food Words",
-                "text": "cheese orange salad apple milk bread banana pizza pasta pizza cheese apple bread pasta salad orange banana milk pasta cheese orange salad milk apple banana pizza bread milk pasta orange pizza banana cheese salad bread apple apple orange salad pizza banana pasta milk bread cheese"
+                "text": "cheese orange salad apple milk bread banana pizza pasta burger steak soup rice bean corn cake pie juice water cheese orange salad apple milk bread banana pizza pasta burger steak soup rice bean corn cake pie juice water"
             },
             {
                 "id": 44,
                 "title": "Animal Words",
-                "text": "elephant giraffe eagle tiger whale lion dolphin penguin penguin lion dolphin tiger giraffe elephant eagle whale giraffe eagle dolphin whale tiger lion penguin elephant whale dolphin giraffe tiger elephant lion penguin eagle giraffe elephant lion tiger dolphin whale penguin eagle dolphin elephant penguin"
+                "text": "elephant giraffe eagle tiger whale lion dolphin penguin monkey snake zebra horse sheep goat deer bear wolf fox shark whale elephant giraffe eagle tiger whale lion dolphin penguin monkey snake zebra horse sheep goat deer bear wolf fox shark whale"
             },
             {
                 "id": 45,
                 "title": "Color Words",
-                "text": "white yellow brown orange black purple blue red green blue red white green yellow black purple brown orange brown purple blue black white yellow green red orange black red purple yellow blue orange brown white green orange purple black green red blue white brown yellow purple red brown black"
+                "text": "white yellow brown orange black purple blue red green pink gray silver gold teal cyan lime navy olive maroon white yellow brown orange black purple blue red green pink gray silver gold teal cyan lime navy olive maroon"
             }
         ]
     },
