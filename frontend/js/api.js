@@ -2,25 +2,35 @@ const API_URL = 'https://typeflow-1.onrender.com/api';
 
 const api = {
     async register(username, password) {
-        const res = await fetch(`${API_URL}/auth/register`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, password })
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.message || 'Registration failed');
-        return data;
+        try {
+            const res = await fetch(`${API_URL}/auth/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.message || 'Registration failed');
+            return data;
+        } catch (err) {
+            console.error('API Error:', err);
+            throw new Error(err.message === 'Failed to fetch' ? 'Server is sleeping. Please wait 30 seconds and try again.' : err.message);
+        }
     },
 
     async login(username, password) {
-        const res = await fetch(`${API_URL}/auth/login`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, password })
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.message || 'Login failed');
-        return data;
+        try {
+            const res = await fetch(`${API_URL}/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.message || 'Login failed');
+            return data;
+        } catch (err) {
+            console.error('API Error:', err);
+            throw new Error(err.message === 'Failed to fetch' ? 'Server is sleeping. Please wait 30 seconds and try again.' : err.message);
+        }
     },
 
     async getMe() {
