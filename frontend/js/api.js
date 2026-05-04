@@ -1,4 +1,4 @@
-const API_URL = 'https://typeflow-1.onrender.com/api';
+const API_URL = 'https://typeflow21.onrender.com/api';
 
 const api = {
     async register(username, password) {
